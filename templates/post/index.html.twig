@@ -8,10 +8,13 @@
     <h1>all posts</h1>
 
     {% for post in posts %}
+
         <p><strong>{{ post.title}}</strong></p>
         <p>{{ post.content}}</p>
+        <p class="text-secondary">{{ post.createdAt|date('d/m/Y - H:s')}}</p>
 
-        <a href="{{ path('todo_show', {id:todo.id}) }}" class="btn btn-primary">Voir</a>
+        <a href="{{ path('post_show', {id:post.id}) }}" class="btn btn-primary">Voir</a>
+
 
         <hr>
     {% endfor %}
