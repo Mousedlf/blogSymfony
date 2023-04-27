@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+
+
+    <h1>all posts</h1>
+
+    {% for post in posts %}
+        <p><strong>{{ post.title}}</strong></p>
+        <p>{{ post.content}}</p>
+
+        <a href="{{ path('todo_show', {id:todo.id}) }}" class="btn btn-primary">Voir</a>
+
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}
